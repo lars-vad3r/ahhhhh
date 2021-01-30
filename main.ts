@@ -1,4 +1,16 @@
-let mySprite = sprites.create(img`
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (aktuellerSpieler < 3) {
+        mySprite.setImage(list[aktuellerSpieler])
+    } else {
+        aktuellerSpieler = 0
+        mySprite.setImage(list[aktuellerSpieler])
+    }
+    aktuellerSpieler += 1
+})
+let mySprite: Sprite = null
+let aktuellerSpieler = 0
+let list: Image[] = []
+list = [img`
     ........................
     ......ffff..............
     ....fff22fff............
@@ -23,6 +35,42 @@ let mySprite = sprites.create(img`
     ........................
     ........................
     ........................
-    `, SpriteKind.Player)
+    `, img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . b 5 5 b . . . 
+    . . . . . . b b b b b b . . . . 
+    . . . . . b b 5 5 5 5 5 b . . . 
+    . b b b b b 5 5 5 5 5 5 5 b . . 
+    . b d 5 b 5 5 5 5 5 5 5 5 b . . 
+    . . b 5 5 b 5 d 1 f 5 d 4 f . . 
+    . . b d 5 5 b 1 f f 5 4 4 c . . 
+    b b d b 5 5 5 d f b 4 4 4 4 b . 
+    b d d c d 5 5 b 5 4 4 4 4 4 4 b 
+    c d d d c c b 5 5 5 5 5 5 5 b . 
+    c b d d d d d 5 5 5 5 5 5 5 b . 
+    . c d d d d d d 5 5 5 5 5 d b . 
+    . . c b d d d d d 5 5 5 b b . . 
+    . . . c c c c c c c c b b . . . 
+    `, img`
+    . . . . f f f f . . . . . 
+    . . f f f f f f f f . . . 
+    . f f f f f f c f f f . . 
+    f f f f f f c c f f f c . 
+    f f f c f f f f f f f c . 
+    c c c f f f e e f f c c . 
+    f f f f f e e f f c c f . 
+    f f f b f e e f b f f f . 
+    . f 4 1 f 4 4 f 1 4 f . . 
+    . f e 4 4 4 4 4 4 e f . . 
+    . f f f e e e e f f f . . 
+    f e f b 7 7 7 7 b f e f . 
+    e 4 f 7 7 7 7 7 7 f 4 e . 
+    e e f 6 6 6 6 6 6 f e e . 
+    . . . f f f f f f . . . . 
+    . . . f f . . f f . . . . 
+    `]
+aktuellerSpieler = 0
+mySprite = sprites.create(list[aktuellerSpieler], SpriteKind.Player)
 controller.moveSprite(mySprite)
 info.setScore(0)
