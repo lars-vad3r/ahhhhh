@@ -1,86 +1,106 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (controller.up.isPressed()) {
-        projectile = sprites.createProjectileFromSprite(img`
-            . . . . . . b b b b a a . . . . 
-            . . . . b b d d d 3 3 3 a a . . 
-            . . . b d d d 3 3 3 3 3 3 a a . 
-            . . b d d 3 3 3 3 3 3 3 3 3 a . 
-            . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-            . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-            b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-            b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-            b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-            a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-            a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-            a a 3 3 3 d d d a a 4 4 4 e e . 
-            . e a a a a a a 4 4 4 4 e e . . 
-            . . e e b b 4 4 4 4 b e e . . . 
-            . . . e e e e e e e e . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `, SpielerSprite, 0, -50)
-        music.pewPew.play()
-    } else if (controller.down.isPressed()) {
-        projectile = sprites.createProjectileFromSprite(img`
-            . . . . . . b b b b a a . . . . 
-            . . . . b b d d d 3 3 3 a a . . 
-            . . . b d d d 3 3 3 3 3 3 a a . 
-            . . b d d 3 3 3 3 3 3 3 3 3 a . 
-            . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-            . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-            b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-            b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-            b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-            a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-            a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-            a a 3 3 3 d d d a a 4 4 4 e e . 
-            . e a a a a a a 4 4 4 4 e e . . 
-            . . e e b b 4 4 4 4 b e e . . . 
-            . . . e e e e e e e e . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `, SpielerSprite, 0, 50)
-        music.pewPew.play()
-    } else if (controller.left.isPressed()) {
-        projectile = sprites.createProjectileFromSprite(img`
-            . . . . . . b b b b a a . . . . 
-            . . . . b b d d d 3 3 3 a a . . 
-            . . . b d d d 3 3 3 3 3 3 a a . 
-            . . b d d 3 3 3 3 3 3 3 3 3 a . 
-            . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-            . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-            b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-            b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-            b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-            a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-            a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-            a a 3 3 3 d d d a a 4 4 4 e e . 
-            . e a a a a a a 4 4 4 4 e e . . 
-            . . e e b b 4 4 4 4 b e e . . . 
-            . . . e e e e e e e e . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `, SpielerSprite, -50, 0)
-        music.pewPew.play()
-    } else if (controller.right.isPressed()) {
-        projectile = sprites.createProjectileFromSprite(img`
-            . . . . . . b b b b a a . . . . 
-            . . . . b b d d d 3 3 3 a a . . 
-            . . . b d d d 3 3 3 3 3 3 a a . 
-            . . b d d 3 3 3 3 3 3 3 3 3 a . 
-            . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-            . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-            b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-            b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-            b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-            a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-            a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-            a a 3 3 3 d d d a a 4 4 4 e e . 
-            . e a a a a a a 4 4 4 4 e e . . 
-            . . e e b b 4 4 4 4 b e e . . . 
-            . . . e e e e e e e e . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `, SpielerSprite, 50, 0)
-        music.pewPew.play()
-    } else {
-    	
+    if (status != 0) {
+        if (controller.up.isPressed()) {
+            projectile = sprites.createProjectileFromSprite(img`
+                . . . . . . b b b b a a . . . . 
+                . . . . b b d d d 3 3 3 a a . . 
+                . . . b d d d 3 3 3 3 3 3 a a . 
+                . . b d d 3 3 3 3 3 3 3 3 3 a . 
+                . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
+                . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
+                b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
+                b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
+                b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
+                a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
+                a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
+                a a 3 3 3 d d d a a 4 4 4 e e . 
+                . e a a a a a a 4 4 4 4 e e . . 
+                . . e e b b 4 4 4 4 b e e . . . 
+                . . . e e e e e e e e . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `, SpielerSprite, 0, -250)
+            music.pewPew.play()
+        } else if (controller.down.isPressed()) {
+            projectile = sprites.createProjectileFromSprite(img`
+                . . . . . . b b b b a a . . . . 
+                . . . . b b d d d 3 3 3 a a . . 
+                . . . b d d d 3 3 3 3 3 3 a a . 
+                . . b d d 3 3 3 3 3 3 3 3 3 a . 
+                . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
+                . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
+                b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
+                b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
+                b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
+                a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
+                a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
+                a a 3 3 3 d d d a a 4 4 4 e e . 
+                . e a a a a a a 4 4 4 4 e e . . 
+                . . e e b b 4 4 4 4 b e e . . . 
+                . . . e e e e e e e e . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `, SpielerSprite, 0, 250)
+            music.pewPew.play()
+        } else if (controller.left.isPressed()) {
+            projectile = sprites.createProjectileFromSprite(img`
+                . . . . . . b b b b a a . . . . 
+                . . . . b b d d d 3 3 3 a a . . 
+                . . . b d d d 3 3 3 3 3 3 a a . 
+                . . b d d 3 3 3 3 3 3 3 3 3 a . 
+                . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
+                . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
+                b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
+                b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
+                b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
+                a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
+                a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
+                a a 3 3 3 d d d a a 4 4 4 e e . 
+                . e a a a a a a 4 4 4 4 e e . . 
+                . . e e b b 4 4 4 4 b e e . . . 
+                . . . e e e e e e e e . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `, SpielerSprite, -250, 0)
+            music.pewPew.play()
+        } else if (controller.right.isPressed()) {
+            projectile = sprites.createProjectileFromSprite(img`
+                . . . . . . b b b b a a . . . . 
+                . . . . b b d d d 3 3 3 a a . . 
+                . . . b d d d 3 3 3 3 3 3 a a . 
+                . . b d d 3 3 3 3 3 3 3 3 3 a . 
+                . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
+                . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
+                b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
+                b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
+                b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
+                a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
+                a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
+                a a 3 3 3 d d d a a 4 4 4 e e . 
+                . e a a a a a a 4 4 4 4 e e . . 
+                . . e e b b 4 4 4 4 b e e . . . 
+                . . . e e e e e e e e . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `, SpielerSprite, 250, 0)
+            music.pewPew.play()
+        } else {
+            projectile = sprites.createProjectileFromSprite(img`
+                . . . . . . b b b b a a . . . . 
+                . . . . b b d d d 3 3 3 a a . . 
+                . . . b d d d 3 3 3 3 3 3 a a . 
+                . . b d d 3 3 3 3 3 3 3 3 3 a . 
+                . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
+                . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
+                b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
+                b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
+                b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
+                a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
+                a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
+                a a 3 3 3 d d d a a 4 4 4 e e . 
+                . e a a a a a a 4 4 4 4 e e . . 
+                . . e e b b 4 4 4 4 b e e . . . 
+                . . . e e e e e e e e . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `, SpielerSprite, randint(-250, 250), randint(-250, 250))
+            music.magicWand.play()
+        }
     }
 })
 function Spielerauswahl () {
@@ -94,6 +114,12 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
             aktuellerSpieler += -1
         }
         scene.setBackgroundImage(SpielerAuswahl[aktuellerSpieler])
+        music.jumpDown.play()
+    }
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
+    if (sprite == projectile2) {
+        game.over(false)
     }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -102,11 +128,14 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
             aktuellerSpieler += 1
         }
         scene.setBackgroundImage(SpielerAuswahl[aktuellerSpieler])
+        music.jumpUp.play()
     }
 })
 function spielen () {
+    tiles.setTilemap(tilemap`Level1`)
     spielerListe = [assets.image`SpriteFlippo`, assets.image`Sprite-Pupsi`, assets.image`Sprite-Hasi`]
     SpielerSprite = sprites.create(spielerListe[aktuellerSpieler], SpriteKind.Player)
+    SpielerSprite.setPosition(19, 27)
     effects.confetti.startScreenEffect(2000)
     scene.setBackgroundImage(img`
         ................................................................................................................................................................
@@ -231,14 +260,24 @@ function spielen () {
         ................................................................................................................................................................
         `)
     controller.moveSprite(SpielerSprite, 100 + 30 * aktuellerSpieler, 100 + 30 * aktuellerSpieler)
-    tiles.setTilemap(tilemap`Level1`)
     scene.cameraFollowSprite(SpielerSprite)
+    GegnerSprite = sprites.create(assets.image`totenkopf`, SpriteKind.Enemy)
+    GegnerSprite.setPosition(145, 97)
+    GegnerSprite.follow(SpielerSprite)
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    music.magicWand.play()
     status = 1
     spielen()
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    if (sprite == projectile) {
+        game.over(true)
+    }
+})
+let GegnerSprite: Sprite = null
 let spielerListe: Image[] = []
+let projectile2: Sprite = null
 let SpielerAuswahl: Image[] = []
 let aktuellerSpieler = 0
 let SpielerSprite: Sprite = null
@@ -246,3 +285,25 @@ let projectile: Sprite = null
 let status = 0
 status = 0
 Spielerauswahl()
+game.onUpdateInterval(1000, function () {
+    if (status != 0) {
+        projectile2 = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . c . . . . . . . . 
+            . . . . c a a a c . . . . . . . 
+            . . . c c f a b b c . . . . . . 
+            . . . b f f b f a a . . . . . . 
+            . . . b b a b f f a . . . . . . 
+            . . . c b f b b a c . . . . . . 
+            . . . . b a f c c . . . . . . . 
+            . . . . . b b c . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, GegnerSprite, randint(-250, 250), randint(-250, 250))
+    }
+})
