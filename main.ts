@@ -262,9 +262,8 @@ function spielen () {
     controller.moveSprite(SpielerSprite, 100 + 30 * aktuellerSpieler, 100 + 30 * aktuellerSpieler)
     scene.cameraFollowSprite(SpielerSprite)
     GegnerSprite = sprites.create(assets.image`totenkopf`, SpriteKind.Enemy)
-    GegnerSprite.setVelocity(10, 10)
     GegnerSprite.setPosition(128, 87)
-    GegnerSprite.follow(SpielerSprite)
+    GegnerSprite.follow(SpielerSprite, 20)
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     music.magicWand.play()
@@ -286,7 +285,7 @@ let projectile: Sprite = null
 let status = 0
 status = 0
 Spielerauswahl()
-game.onUpdateInterval(1000, function () {
+game.onUpdateInterval(500, function () {
     if (status != 0) {
         projectile2 = sprites.createProjectileFromSprite(img`
             . . . . . . . . . . . . . . . . 
