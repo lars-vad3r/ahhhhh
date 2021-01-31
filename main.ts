@@ -262,7 +262,8 @@ function spielen () {
     controller.moveSprite(SpielerSprite, 100 + 30 * aktuellerSpieler, 100 + 30 * aktuellerSpieler)
     scene.cameraFollowSprite(SpielerSprite)
     GegnerSprite = sprites.create(assets.image`totenkopf`, SpriteKind.Enemy)
-    GegnerSprite.setPosition(145, 97)
+    GegnerSprite.setVelocity(10, 10)
+    GegnerSprite.setPosition(128, 87)
     GegnerSprite.follow(SpielerSprite)
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
